@@ -77,14 +77,19 @@ public class assignment extends Application {
         ImageView wcView = new ImageView(wechat);
         ImageView igView = new ImageView(ig);
 
+        // set facebook button
         Button fbbtn = new Button();
         fbbtn.setGraphic(fbView);
         fbbtn.setPrefSize(40,40);
         fbbtn. setStyle("-fx-background-color: #000000; ");
+
+         // set wechat button
         Button wcbtn = new Button();
         wcbtn.setGraphic(wcView);
         wcbtn.setPrefSize(40,40);
         wcbtn. setStyle("-fx-background-color: #000000; ");
+
+         // set Instagram button
         Button igBtn = new Button();
         igBtn.setGraphic(igView);
         igBtn.setPrefSize(40,40);
@@ -97,7 +102,7 @@ public class assignment extends Application {
         advBox.setTranslateY(300);
         advBox.setTranslateX(3);
 
-        // to write sth
+        // to write "Stare in the night too long and you will eventually see what isnt there"
         Text t1= new Text();
         t1.setText("STARE..in the..\nN\nI\nG\nH\nT");
         t1.setFont(Font.font ("Constantia", 25));
@@ -137,6 +142,7 @@ public class assignment extends Application {
 
     }
 
+    // design menu 
     private static class MenuItem extends StackPane{
         MenuItem(String name, Runnable action){
             LinearGradient gradient = new LinearGradient(0,0.5,1,0.5,true, CycleMethod.NO_CYCLE,new Stop(0.1,Color.web("black",0.75)), new Stop(1.0, Color.web("black",0.15)));
