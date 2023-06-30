@@ -57,7 +57,7 @@ public class assignment extends Application {
         titleView.setY(2);
 
         // to set icon position
-        iconView.setX(375);
+        iconView.setX(380);
         iconView.setY(275);
 
         // to create play button
@@ -77,40 +77,53 @@ public class assignment extends Application {
         ImageView wcView = new ImageView(wechat);
         ImageView igView = new ImageView(ig);
 
-        // set facebook button
+        // to set the facebook button
         Button fbbtn = new Button();
         fbbtn.setGraphic(fbView);
-        fbbtn.setPrefSize(40,40);
+        fbbtn.setPrefSize(30,30);
         fbbtn. setStyle("-fx-background-color: #000000; ");
 
-         // set wechat button
+        // to set the weChat button
         Button wcbtn = new Button();
         wcbtn.setGraphic(wcView);
-        wcbtn.setPrefSize(40,40);
+        wcbtn.setPrefSize(30,30);
         wcbtn. setStyle("-fx-background-color: #000000; ");
 
-         // set Instagram button
+        // to set the instagram button
         Button igBtn = new Button();
         igBtn.setGraphic(igView);
-        igBtn.setPrefSize(40,40);
+        igBtn.setPrefSize(30,30);
         igBtn. setStyle("-fx-background-color: #000000; ");
 
+        // to set geisha's picture
+        Image geisha = new Image(assignment.class.getResource("Geisha.png").toString());
+        ImageView gsView = new ImageView(geisha);
+        gsView.setX(585);
+        gsView.setY(50);
+
+        // to set hand's picture
+        Image hand = new Image(assignment.class.getResource("hand.png").toString());
+        ImageView handView = new ImageView(hand);
+        handView.setOpacity(0.80);
+        handView.setX(800);
+        handView.setY(600);
+
         // to store those adv button
-        VBox advBox = new VBox();
+        HBox advBox = new HBox();
         advBox.setSpacing(12);
         advBox.getChildren().addAll(fbbtn,wcbtn,igBtn);
-        advBox.setTranslateY(300);
-        advBox.setTranslateX(3);
+        advBox.setTranslateY(3);
+        advBox.setTranslateX(980);
 
-        // to write "Stare in the night too long and you will eventually see what isnt there"
+        // to write text
         Text t1= new Text();
         t1.setText("STARE..in the..\nN\nI\nG\nH\nT");
         t1.setFont(Font.font ("Constantia", 25));
         t1.setFill(Color.RED);
-        t1.setTextAlignment(TextAlignment.RIGHT);
+        t1.setTextAlignment(TextAlignment.LEFT);
         Text t2= new Text();
 
-        t2.setText("                                               t...oo long an...d....");
+        t2.setText("t...oo long an...d....");
         t2.setFont(Font.font ("Constantia", 23));
         t2.setFill(Color.RED);
         t2.setTextAlignment(TextAlignment.RIGHT);
@@ -120,13 +133,14 @@ public class assignment extends Application {
         t3.setFont(Font.font ("Constantia", 23));
         t3.setFill(Color.RED);
 
+        HBox txtBox1 = new HBox(t1);
         VBox txtBox = new VBox(t2,t3);
-        HBox txtBox2 = new HBox(t1);
 
-        txtBox.setTranslateX(650);
-        txtBox.setTranslateY(530);
-        txtBox2.setTranslateX(950);
-        txtBox2.setTranslateY(350);
+
+        txtBox.setTranslateX(5);
+        txtBox.setTranslateY(625);
+        txtBox1.setTranslateX(8);
+        txtBox1.setTranslateY(90);
 
 
         // to set background picture
@@ -137,12 +151,11 @@ public class assignment extends Application {
                 BackgroundPosition.CENTER,
                 bgSize)));
 
-        pane.getChildren().addAll(txtBox,txtBox2,advBox,titleView,iconView,menuHbox,playBtn);
+        pane.getChildren().addAll(gsView,txtBox,txtBox1,advBox,titleView,iconView,menuHbox,playBtn,handView);
 
 
     }
 
-    // design menu 
     private static class MenuItem extends StackPane{
         MenuItem(String name, Runnable action){
             LinearGradient gradient = new LinearGradient(0,0.5,1,0.5,true, CycleMethod.NO_CYCLE,new Stop(0.1,Color.web("black",0.75)), new Stop(1.0, Color.web("black",0.15)));
